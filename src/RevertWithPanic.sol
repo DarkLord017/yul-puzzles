@@ -8,6 +8,9 @@ contract RevertWithPanic {
             // revert the function with an error of type `Panic(uint256)`
             // use "0x01" as error code
             // Hint: The error type is built-in and cannot be re-defined. See https://www.rareskills.io/post/try-catch-solidity
+            mstore(0, 0x4e487b71)
+            mstore(32, 0x01)
+            revert(28, 36)
         }
     }
 }

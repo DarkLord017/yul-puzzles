@@ -10,6 +10,9 @@ contract RevertWithSelectorPlusArgs {
             // revert custom error with x parameter
             // Hint: concatenate selector and x by storing them
             // adjacent to each other in memory
+            mstore(0,0xae412287)
+            mstore(32 , x)
+            revert(28 , 36)
         }
     }
 }
